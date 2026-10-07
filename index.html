@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f3fc">
+  <title>Доска объявлений</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <span class="brand-icon">✦</span>
+        Доска объявлений
+      </a>
+      <span class="nav-caption">Покупай и продавай рядом</span>
+    </div>
+  </nav>
+
+  <main class="container page-content">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">Маркетплейс сообщества</span>
+        <h1>Найди то,<br>что давно искал</h1>
+        <p>Размещай объявления и находи интересные предложения.</p>
+      </div>
+      <div class="hero-decoration" aria-hidden="true">✧</div>
+    </section>
+
+    <div class="row g-4">
+      <aside class="col-lg-4">
+        <section class="form-card">
+          <div class="section-heading">
+            <span class="heading-icon">＋</span>
+            <div>
+              <h2>Новое объявление</h2>
+              <p>Расскажи о своём предложении</p>
+            </div>
+          </div>
+
+          <form id="adForm" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="title" class="form-label">Заголовок</label>
+              <input type="text" class="form-control" id="title" name="title"
+                     placeholder="Например, велосипед" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="description" class="form-label">Описание</label>
+              <textarea class="form-control" id="description" name="description"
+                        rows="4" placeholder="Опиши товар подробнее..." required></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="price" class="form-label">Цена, сом</label>
+              <div class="price-input">
+                <input type="number" class="form-control" id="price" name="price"
+                       placeholder="0" step="0.01" min="0" required>
+                <span>сом</span>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label for="image" class="form-label">Изображение</label>
+              <input type="file" class="form-control" id="image" name="image"
+                     accept="image/*">
+              <div class="form-text">Добавь фото, чтобы объявление заметили</div>
+            </div>
+
+            <button type="submit" class="btn submit-btn w-100" id="submitBtn">
+              Отправить объявление <span aria-hidden="true">→</span>
+            </button>
+          </form>
+
+          <div id="formAlert" class="mt-3 d-none"></div>
+        </section>
+      </aside>
+
+      <section class="col-lg-8">
+        <div class="ads-header">
+          <div>
+            <span class="eyebrow">Свежие предложения</span>
+            <h2>Объявления</h2>
+          </div>
+          <button class="btn refresh-btn" id="refreshBtn" type="button">
+            <span aria-hidden="true">↻</span> Обновить
+          </button>
+        </div>
+
+        <div id="loader" class="loader">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Загрузка...</span>
+          </div>
+          <p>Загружаем объявления...</p>
+        </div>
+
+        <div id="errorBlock" class="alert alert-danger d-none"></div>
+        <div id="adsList" class="row g-4"></div>
+      </section>
+    </div>
+
+    <footer>Доска объявлений · Найди своё</footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

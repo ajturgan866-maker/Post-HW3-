@@ -1,0 +1,376 @@
+:root {
+  --purple: #76539a;
+  --purple-dark: #563976;
+  --purple-light: #eee7f6;
+  --text: #352b40;
+  --muted: #898092;
+  --border: #ebe5f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 12% 5%, #eee5fb 0, transparent 32%),
+    #faf8fc;
+  color: var(--text);
+  font-family: "Manrope", Arial, sans-serif;
+}
+
+.navbar {
+  padding: 17px 0;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--purple-dark);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.navbar-brand:hover {
+  color: var(--purple);
+}
+
+.brand-icon {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--purple);
+  color: white;
+}
+
+.nav-caption {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.page-content {
+  padding-top: 38px;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  min-height: 225px;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  margin-bottom: 32px;
+  padding: 32px 42px;
+  border: 1px solid #e7ddf0;
+  border-radius: 24px;
+  background: linear-gradient(120deg, #f0e8f8, #f8f3fc 70%, #eee6f7);
+}
+
+.eyebrow {
+  color: var(--purple);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 10px 0;
+  color: #39294a;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  letter-spacing: -.055em;
+  line-height: 1.08;
+}
+
+.hero p {
+  margin: 0;
+  color: #756b80;
+  font-size: 14px;
+}
+
+.hero-decoration {
+  position: absolute;
+  right: 60px;
+  color: #d3c0e5;
+  font-size: 150px;
+  line-height: 1;
+}
+
+.form-card {
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 12px 35px #49345e0d;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.heading-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 13px;
+  background: var(--purple-light);
+  color: var(--purple);
+  font-size: 24px;
+}
+
+.section-heading h2,
+.ads-header h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -.04em;
+}
+
+.section-heading p {
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.form-label {
+  margin-bottom: 7px;
+  color: #51465e;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.form-control {
+  min-height: 45px;
+  border: 1px solid #e7e1ec;
+  border-radius: 10px;
+  background-color: #fcfbfd;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 13px;
+}
+
+textarea.form-control {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-control:focus {
+  border-color: #a88ac3;
+  background: white;
+  box-shadow: 0 0 0 4px #eee7f6;
+}
+
+.form-control::placeholder {
+  color: #b2aaba;
+}
+
+.price-input {
+  position: relative;
+}
+
+.price-input .form-control {
+  padding-right: 55px;
+}
+
+.price-input span {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.form-text {
+  color: #a49baa;
+  font-size: 10px;
+}
+
+.submit-btn {
+  display: flex;
+  min-height: 47px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #8060a1, #674786);
+  color: white;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  box-shadow: 0 7px 15px #70508d30;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+  background: linear-gradient(135deg, #70518f, #563976);
+  color: white;
+}
+
+.submit-btn:disabled {
+  opacity: .7;
+}
+
+.ads-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin: 3px 0 20px;
+}
+
+.ads-header h2 {
+  margin-top: 5px;
+  font-size: 25px;
+}
+
+.refresh-btn {
+  border: 1px solid #e3d9ec;
+  border-radius: 10px;
+  background: white;
+  color: var(--purple);
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.refresh-btn:hover {
+  border-color: #cbb9dc;
+  background: var(--purple-light);
+  color: var(--purple-dark);
+}
+
+.loader {
+  padding: 45px 15px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.loader .spinner-border {
+  width: 28px;
+  height: 28px;
+  color: var(--purple);
+}
+
+.loader p {
+  margin: 12px 0 0;
+  font-size: 12px;
+}
+
+.ad-card {
+  overflow: hidden;
+  height: 100%;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 8px 24px #49345e0a;
+  transition: transform .18s, box-shadow .18s;
+}
+
+.ad-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px #49345e16;
+}
+
+.ad-card .card-img-top {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  background: #f2edf7;
+}
+
+.no-image-placeholder {
+  display: grid;
+  height: 190px;
+  place-items: center;
+  background: linear-gradient(135deg, #f1eaf7, #faf7fc);
+  color: #9888a8;
+  font-size: 12px;
+}
+
+.ad-card .card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 17px;
+}
+
+.ad-card .card-title {
+  margin-bottom: 8px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.ad-card .card-text {
+  margin-bottom: 16px;
+  color: var(--muted) !important;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.ad-card .price {
+  color: var(--purple-dark);
+  font-size: 17px;
+  font-weight: 800;
+}
+
+#adsList > p {
+  padding: 22px;
+  border: 1px dashed #d9cde5;
+  border-radius: 14px;
+  background: #fff;
+  color: var(--muted) !important;
+  font-size: 13px;
+  text-align: center;
+}
+
+footer {
+  padding: 32px 0 20px;
+  color: #a098a9;
+  font-size: 10px;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .page-content {
+    padding-top: 22px;
+  }
+
+  .hero {
+    min-height: 190px;
+    padding: 25px;
+  }
+
+  .hero-decoration {
+    right: 18px;
+    font-size: 100px;
+  }
+
+  .nav-caption {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .form-card {
+    padding: 20px;
+  }
+}
